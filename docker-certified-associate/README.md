@@ -13,7 +13,10 @@ Syllabus for the exam can be found here.
     /tmp # ls -ltr
 
     total 12
+	
     -rwxr-xr-x    1 root     root            14 May  9 20:34 copy.txt
+	
     -rwxr-xr-x    1 root     root            12 May  9 20:34 add.txt
+	
     -rw-rw-rw-    1 root     root            22 May  9 20:34 compress.txt
 
