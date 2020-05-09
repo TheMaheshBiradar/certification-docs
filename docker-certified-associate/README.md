@@ -20,3 +20,13 @@ Syllabus for the exam can be found here.
 	
     -rw-rw-rw-    1 root     root            22 May  9 20:34 compress.txt
 
+
+
+
+2. Docker Inspect
+    docker container inspect <container_name>
+
+
+3. CMD vs ENTRYPOINT
+    CMD - can be overriden with -c
+    ENTRYPOINT - can not be overriden but you can append
