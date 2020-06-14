@@ -2,6 +2,10 @@
 
 Syllabus for the exam can be found here.
 
+Docker exam experience & questions - https://medium.com/bb-tutorials-and-thoughts/250-practice-questions-for-the-dca-exam-84f3b9e8f5ce
+
+
+
 
 1. ADD vs COPY
     a. COPY - It takes source & destination . Source could be local file or DIR
