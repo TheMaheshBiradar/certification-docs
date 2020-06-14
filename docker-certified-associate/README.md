@@ -1,5 +1,11 @@
 # Docker Certified Associate
 
+#Setup 
+
+If you are working on Windows Machine then you can use WSL 2 together with docker to get docker desktop.
+
+https://docs.docker.com/docker-for-windows/wsl/
+
 Syllabus for the exam can be found here.
 
 Docker exam experience & questions - https://medium.com/bb-tutorials-and-thoughts/250-practice-questions-for-the-dca-exam-84f3b9e8f5ce
