@@ -40,3 +40,18 @@ Docker exam experience & questions - https://medium.com/bb-tutorials-and-thought
 3. CMD vs ENTRYPOINT
     CMD - can be overriden with -c
     ENTRYPOINT - can not be overriden but you can append
+
+
+4. Search image with --filter 
+    1.  docker search ngnix --filter "is-official=true"
+    2. docker search ngnix --limit 5
+
+
+5. How to transfer docker image
+
+    1. docker save busybox > busybox.tar
+    2. docker load < busybox.tar
+
+6.  Build Cache : If certain step has changed and cache is not used for the step and it's subsequent layers.
+
+7.  
