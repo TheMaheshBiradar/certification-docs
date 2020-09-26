@@ -17,6 +17,10 @@ Virtual Networks
   Firewall
   
         gcloud compute --project=qwiklabs-gcp-01-248f1e39fabc firewall-rules create managementnet-allow-icmp-ssh-rdp --direction=INGRESS --priority=1000 --network=managementnet --action=ALLOW --rules=tcp:22,tcp:3389,icmp --source-ranges=0.0.0.0/0
+        gcloud compute firewall-rules create privatenet-allow-icmp-ssh-rdp --direction=INGRESS --network=privatenet --priority=1000 --action=ALLOW --rules=icmp,tcp:22,tcp:3389 --source-ranges=0.0.0.0/0
+        gcloud compute firewall-rules list
+        gcloud compute firewall-rules list --sort-by=NETWORK
+        gcloud compute firewall-rules list --sort-by=NETWORK --format=json
         
 
 
@@ -25,7 +29,9 @@ Virtual Machine :
         gcloud compute instances list
         gcloud compute instances create --machine-type=n1-standard-1 my-first-paid-machine
         gcloud compute instances delete my-first-paid-machine
-      
+        gcloud compute instances create privatenet-us-vm --zone=us-central1-c --machine-type=f1-micro --subnet=privatesubnet-us --image-family=debian-10 --image-project=debian-cloud --boot-disk-size=10GB --boot-disk-type=pd-standard --boot-disk-device-name=privatenet-us-vm
+        gcloud compute instances list --sort-by=ZONE
+        
 Container Clusters :
     
         gcloud compute instances list
