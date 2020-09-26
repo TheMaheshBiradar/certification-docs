@@ -5,7 +5,21 @@ Create Storage bucket :
     gsutil mb gs://maheshbiradar03
     gsutil cp myfile gs://maheshbiradar03
    
+Virtual Networks
    
+       gcloud compute networks create privatenet --subnet-mode=custom
+       gcloud compute networks subnets create privatesubnet-eu --network=privatenet --region=europe-west1 --range=172.20.0.0/20
+       gcloud compute networks subnets create privatesubnet-us --network=privatenet --region=us-central1 --range=172.16.0.0/24
+       gcloud compute networks list
+       gcloud compute networks subnets list --sort-by=NETWORK
+       gcloud compute networks subnets list --sort-by=NETWORK
+       
+  Firewall
+  
+        gcloud compute --project=qwiklabs-gcp-01-248f1e39fabc firewall-rules create managementnet-allow-icmp-ssh-rdp --direction=INGRESS --priority=1000 --network=managementnet --action=ALLOW --rules=tcp:22,tcp:3389,icmp --source-ranges=0.0.0.0/0
+        
+
+
 Virtual Machine :
     
         gcloud compute instances list
