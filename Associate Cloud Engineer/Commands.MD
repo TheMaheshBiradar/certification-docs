@@ -31,7 +31,7 @@ Virtual Machine :
         gcloud compute instances delete my-first-paid-machine
         gcloud compute instances create privatenet-us-vm --zone=us-central1-c --machine-type=f1-micro --subnet=privatesubnet-us --image-family=debian-10 --image-project=debian-cloud --boot-disk-size=10GB --boot-disk-type=pd-standard --boot-disk-device-name=privatenet-us-vm
         gcloud compute instances list --sort-by=ZONE
-        
+        gcloud compute ssh vm-internal --zone us-central1-c --tunnel-through-iap
 Container Clusters :
     
         gcloud compute instances list
@@ -53,3 +53,9 @@ Projects :
     get users and their IAM policies
      
     gcloud projects get-iam-policy circular-genius-287421
+
+
+
+Screen Utilities
+
+    sudo apt-get install -y screen
