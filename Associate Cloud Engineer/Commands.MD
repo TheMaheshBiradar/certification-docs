@@ -55,7 +55,32 @@ Projects :
     gcloud projects get-iam-policy circular-genius-287421
 
 
+Storage
 
+    gsutil lifecycle get gs://$BUCKET_NAME_1
+    nano life.json
+    {
+      "rule":
+      [
+        {
+          "action": {"type": "Delete"},
+          "condition": {"age": 31}
+        }
+      ]
+    }
+    gsutil lifecycle set life.json gs://$BUCKET_NAME_1
+    
+    
+    gsutil versioning get gs://$BUCKET_NAME_1
+    gsutil versioning set on gs://$BUCKET_NAME_1
+    gsutil cp -v setup.html gs://$BUCKET_NAME_1
+    gsutil ls -a gs://$BUCKET_NAME_1/setup.html
+    gsutil rsync -r ./firstlevel gs://$BUCKET_NAME_1/firstlevel
+    
 Screen Utilities
 
     sudo apt-get install -y screen
+    
+Activate Service Accounts
+
+    gcloud auth activate-service-account --key-file credentials.json
