@@ -7,11 +7,12 @@ Configurations
 
 Projects
 
-    gcloud projects list            
+              
     gcloud services list --project <project_id>                 # returns already enabled services though flag is not there 
     gcloud services list --project <project_id> --enabled       # already enabled
     gcloud services list --project <project_id> --available     # available to be enabled 
-
+    
+    
 Create Storage bucket :
 
     gsutil mb gs://maheshbiradar03
@@ -68,8 +69,11 @@ Importance of .profile and source in that  when you close the shell and open aga
 
 
 Projects :
+
+    gcloud projects list  
+    gcloud projects describe circular-genius-287421
+    
     get users and their IAM policies
-     
     gcloud projects get-iam-policy circular-genius-287421
 
 
