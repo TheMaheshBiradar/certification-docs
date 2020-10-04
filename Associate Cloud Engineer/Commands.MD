@@ -1,11 +1,20 @@
 #Commands in GCP
-
+```html
 Configurations
 
     gcloud config configurations create [NAME]
     gcloud config configurations activate [NAME] 
     gcloud config unset compute/zone
+```   
+```html
+Projects
 
+    gcloud projects list            
+    gcloud services list --project <project_id>                 # returns already enabled services though flag is not there # 
+    gcloud services list --project <project_id> --enabled       # already enabled
+    gcloud services list --project <project_id> --available     # available to be enabled 
+       
+```        
 
 Create Storage bucket :
 
