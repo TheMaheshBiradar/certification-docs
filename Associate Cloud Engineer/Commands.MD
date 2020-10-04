@@ -1,20 +1,16 @@
-#Commands in GCP
-```html
+##Commands in GCP
 Configurations
 
     gcloud config configurations create [NAME]
     gcloud config configurations activate [NAME] 
     gcloud config unset compute/zone
-```   
-```html
+
 Projects
 
     gcloud projects list            
-    gcloud services list --project <project_id>                 # returns already enabled services though flag is not there # 
+    gcloud services list --project <project_id>                 # returns already enabled services though flag is not there 
     gcloud services list --project <project_id> --enabled       # already enabled
     gcloud services list --project <project_id> --available     # available to be enabled 
-       
-```        
 
 Create Storage bucket :
 
@@ -51,6 +47,9 @@ Virtual Machine :
         gcloud compute instances create privatenet-us-vm --zone=us-central1-c --machine-type=f1-micro --subnet=privatesubnet-us --image-family=debian-10 --image-project=debian-cloud --boot-disk-size=10GB --boot-disk-type=pd-standard --boot-disk-device-name=privatenet-us-vm
         gcloud compute instances list --sort-by=ZONE
         gcloud compute ssh vm-internal --zone us-central1-c --tunnel-through-iap
+        
+        gcloud compute reset-windows-password instance-name
+
 Container Clusters :
     
         gcloud compute instances list
