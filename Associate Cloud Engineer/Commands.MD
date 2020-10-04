@@ -1,9 +1,19 @@
 #Commands in GCP
 
+Configurations
+
+    gcloud config configurations create [NAME]
+    gcloud config configurations activate [NAME] 
+    gcloud config unset compute/zone
+
+
 Create Storage bucket :
 
     gsutil mb gs://maheshbiradar03
+    gsutil mb -b on gs://maheshbiradar03 --uniform Access on on Bucket Level
     gsutil cp myfile gs://maheshbiradar03
+    gsutil mb -c standard -l us-east1 --retention 1y gs://some-bucket ## if no location the default is US
+
    
 Virtual Networks
    
@@ -25,7 +35,7 @@ Virtual Networks
 
 
 Virtual Machine :
-    
+        
         gcloud compute instances list
         gcloud compute instances create --machine-type=n1-standard-1 my-first-paid-machine
         gcloud compute instances delete my-first-paid-machine
@@ -84,3 +94,14 @@ Screen Utilities
 Activate Service Accounts
 
     gcloud auth activate-service-account --key-file credentials.json
+
+App Deployment
+
+    gcloud app deploy app.yaml --quiet
+    gcloud app browse --quiet
+    
+    
+ App Infra/ Deployment Manager
+ 
+    gcloud deployment-manager deployments create dminfra --config=config.yaml --preview
+    gcloud deployment-manager deployments update dminfra
