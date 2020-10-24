@@ -73,7 +73,7 @@ Projects :
 
     gcloud projects list  
     gcloud projects describe circular-genius-287421
-    
+    gcloud iam roles update roles/ProjectUpdater --project=myproject --stage disabled
     get users and their IAM policies
     gcloud projects get-iam-policy circular-genius-287421
 
