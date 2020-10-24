@@ -65,6 +65,7 @@ IAM:
         
         gcloud organizations add-iam-policy-binding ORGANIZATION --member=MEMBER
             --role=ROLE
+        gcloud auth list  -- active account 
 Importance of .profile and source in that  when you close the shell and open again
 
 
