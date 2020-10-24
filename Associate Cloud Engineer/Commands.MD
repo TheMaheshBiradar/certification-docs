@@ -117,3 +117,17 @@ App Deployment
  
     gcloud deployment-manager deployments create dminfra --config=config.yaml --preview
     gcloud deployment-manager deployments update dminfra
+
+
+Kubernetes Rolling Updates
+    
+    
+    .spec.strategy.rollingUpdate.maxUnavailable
+    
+        is an optional field that specifies the maximum number of Pods that can be unavailable during the update process
+        The default value is 25%.
+     
+     .spec.strategy.rollingUpdate.maxSurge
+  
+        is an optional field that specifies the maximum number of Pods that can be created over the desired number of Pods
+         The default value is 25%.
