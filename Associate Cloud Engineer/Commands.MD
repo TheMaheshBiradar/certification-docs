@@ -29,6 +29,7 @@ Virtual Networks
        gcloud compute networks list
        gcloud compute networks subnets list --sort-by=NETWORK
        gcloud compute networks subnets list --sort-by=NETWORK
+       gcloud compute networks subnets describe NAME --region=europe-west1  # describe specific network
        
   Firewall
   
@@ -74,7 +75,8 @@ Projects :
     gcloud projects list  
     gcloud projects describe circular-genius-287421
     gcloud iam roles update roles/ProjectUpdater --project=myproject --stage disabled
-    get users and their IAM policies
+    
+    # get users and their IAM policies
     gcloud projects get-iam-policy circular-genius-287421
 
 
