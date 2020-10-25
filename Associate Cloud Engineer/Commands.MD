@@ -5,12 +5,18 @@ Configurations
     gcloud config configurations activate [NAME] 
     gcloud config unset compute/zone
 
-Projects
+Services on Projects
 
               
     gcloud services list --project <project_id>                 # returns already enabled services though flag is not there 
     gcloud services list --project <project_id> --enabled       # already enabled
-    gcloud services list --project <project_id> --available     # available to be enabled 
+    gcloud services list --project <project_id> --available     # available to be enabled & already enabled 
+    
+    gcloud services disable my-consumed-service
+    gcloud services disable my-consumed-service --async
+    
+    gcloud services enable service1 service2 service3
+    gcloud services enable my-consumed-service --async
     
     
 Create Storage bucket :
@@ -20,6 +26,9 @@ Create Storage bucket :
     gsutil cp myfile gs://maheshbiradar03
     gsutil mb -c standard -l us-east1 --retention 1y gs://some-bucket ## if no location the default is US
 
+Projects -> Billing account
+
+    gcloud beta billing projects link my-project --billing-account=0X0X0X-0X0X0X-0X0X0X
    
 Virtual Networks
    
@@ -76,9 +85,14 @@ Projects :
     gcloud projects list  
     gcloud projects describe circular-genius-287421
     gcloud iam roles update roles/ProjectUpdater --project=myproject --stage disabled
-    
+   
+    # See the difference... It's add-iam-policy-binding 
+    gcloud projects add-iam-policy-binding example-project-id-1 --member='user:test-user@gmail.com' --role='roles/editor'
+   
     # get users and their IAM policies
     gcloud projects get-iam-policy circular-genius-287421
+    
+    gcloud projects get-ancestors my-project
 
 
 Storage
