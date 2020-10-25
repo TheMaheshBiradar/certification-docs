@@ -72,6 +72,7 @@ Importance of .profile and source in that  when you close the shell and open aga
 
 Projects :
 
+    gcloud projects create projectId --folder folderId --organization orgId --name --set-as-default
     gcloud projects list  
     gcloud projects describe circular-genius-287421
     gcloud iam roles update roles/ProjectUpdater --project=myproject --stage disabled
