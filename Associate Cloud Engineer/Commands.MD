@@ -4,6 +4,9 @@ Configurations
     gcloud config configurations create [NAME]
     gcloud config configurations activate [NAME] 
     gcloud config unset compute/zone
+    gcloud config set project id
+    glcoud config set compute/zone
+    
 
 Services on Projects
 
