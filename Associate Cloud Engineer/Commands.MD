@@ -63,6 +63,7 @@ Virtual Machine :
         gcloud compute ssh vm-internal --zone us-central1-c --tunnel-through-iap
         
         gcloud compute reset-windows-password instance-name
+        gcloud compute project-info describe #Describe the Compute Engine project resource.
 
 Container Clusters :
     
