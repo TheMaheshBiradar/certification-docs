@@ -67,11 +67,17 @@ Virtual Machine :
 
         gcloud compute machine-types list
         gcloud compute disk-types list
+        gcloud compute zones list
+        gcloud compute instances delete ch06-instance-1 --zone us-central2-b --keepdisks=all
+        gcloud compute instances delete ch06-instance-1 --zone us-central2-b --deletedisks=data
+        gcloud compute instances describe INSTANCE_NAME
         
         #movement within region
         gcloud compute instances move
         
         #different regions - then follow snapshot approach
+        
+        gcloud compute instances start instance1, instance 2 --async
                 
 
 Container Clusters :
