@@ -98,6 +98,23 @@ Disks / Snapshots /Images :
         gcloud compute images delete my-image
         
         gcloud compute images export --destination-uri mydestionation --image-name myimageName
+        
+        
+Instance group templates / Groups:
+   
+        gcloud compute instance-templates create mytemplate
+        gcloud compute instance-templates delete mytemplate
+        gcloud compute instance-templates create mytemplate --source-instance=ch06-instance-1
+        gcloud compute instance-templates describe mytemplate
+        gcloud compute instance-templates list
+        
+        #remember - always provide managed vs unmanaged as group
+        gcloud compute instance-groups managed create --template=mytemplate --size=5 myinstancegroup
+        
+        gcloud compute instance-groups managed list-instances
+        gcloud compute instance-groups managed list-instances myinstancegroup
+        gcloud compute instance-groups managed delete myinstancegroup
+        
 
              
 
