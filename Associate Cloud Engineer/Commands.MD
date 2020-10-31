@@ -65,6 +65,15 @@ Virtual Machine :
         gcloud compute reset-windows-password instance-name
         gcloud compute project-info describe #Describe the Compute Engine project resource.
 
+        gcloud compute machine-types list
+        gcloud compute disk-types list
+        
+        #movement within region
+        gcloud compute instances move
+        
+        #different regions - then follow snapshot approach
+                
+
 Container Clusters :
     
         gcloud compute instances list
