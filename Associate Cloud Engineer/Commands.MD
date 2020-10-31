@@ -76,9 +76,30 @@ Virtual Machine :
         gcloud compute instances move
         
         #different regions - then follow snapshot approach
-        
         gcloud compute instances start instance1, instance 2 --async
-                
+   
+Disks / Snapshots /Images :
+
+        gcloud compute disks snapshot DISK_NAME --snapshot-names=NAME
+        gcloud compute disks create DISK_NAME --source-snapshot=SNAPSHOT_NAME
+        gcloud compute snapshots list
+        gcloud compute snapshots describe SNAPSHOT_NAME
+        
+        
+       
+        gcloud compute images create IMAGE_NAME
+                    --source-disk
+                    --source-image
+                    --source-image-family
+                    --source-snapshot
+                    --source-uri
+                              
+        gcloud compute images create ch06-image-1 –-source-disk ch06-disk
+        gcloud compute images delete my-image
+        
+        gcloud compute images export --destination-uri mydestionation --image-name myimageName
+
+             
 
 Container Clusters :
     
