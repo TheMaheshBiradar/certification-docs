@@ -6,7 +6,7 @@ Configurations
     gcloud config unset compute/zone
     gcloud config set project id
     glcoud config set compute/zone
-    
+    gcloud config get-value compute/zone
 
 Services on Projects
 
@@ -122,7 +122,17 @@ Container Clusters :
     
         gcloud compute instances list
         gcloud container clusters create --num-nodes=4 --region=us-central1 first-k8s-cluster
-    
+        gcloud container clusters create --num-nodes 2 webfrontend
+        
+        gcloud components install kubectl
+        kubectl run ch07-app-deploy --image=ch07-app --port=8080
+        kubectl create deploy nginx --image=nginx:1.17.10
+        kubectl get pods
+        kubectl expose deployment ngnix --type LoadBalancer --port 80
+        kubectl get services
+        
+        kubectl scale deployment nginx --replicas 3
+        
 
 List the regions:
 
