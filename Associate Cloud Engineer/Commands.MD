@@ -124,6 +124,8 @@ Container Clusters :
         gcloud container clusters create --num-nodes=4 --region=us-central1 first-k8s-cluster
         gcloud container clusters create --num-nodes 2 webfrontend
         
+        gcloud container clusters get-credentials standard-cluster-1 --zone us-central1-c
+        
         gcloud components install kubectl
         kubectl run ch07-app-deploy --image=ch07-app --port=8080
         kubectl create deploy nginx --image=nginx:1.17.10
@@ -132,6 +134,22 @@ Container Clusters :
         kubectl get services
         
         kubectl scale deployment nginx --replicas 3
+        kubectl autoscale deployment nginx-1 --max 10 --min 1 --cpu-percent 80
+        kubectl delete deployment nginx-1
+        
+        kubectl describe nodes/podes
+        
+        kubectl run hello-server --image=gcr.io/google/samples/hello-app:1.0 --port 8080
+        kubectl expose deployment hello-server --type="LoadBalancer"
+        kubectl delete service hello-server
+        
+        
+        gcloud container images list
+        gcloud container images list --repository gcr.io/google-containers
+        gcloud container images describe gcr.io/appengflex-project-1/nginx
+        
+        gcloud container clusters resize standard-cluster-1 --zone us-central1-c --num-nodes 4 --node-pool default-pool
+        gcloud container clusters update standard-cluster-1 --enable-autoscaling --min-nodes 1 --max-nodes 5 --zone us-central1-c --node-pool default-pool
         
 
 List the regions:
