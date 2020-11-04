@@ -151,6 +151,20 @@ Container Clusters :
         gcloud container clusters resize standard-cluster-1 --zone us-central1-c --num-nodes 4 --node-pool default-pool
         gcloud container clusters update standard-cluster-1 --enable-autoscaling --min-nodes 1 --max-nodes 5 --zone us-central1-c --node-pool default-pool
         
+App Engine:
+        
+        gcloud components install app-engine-python
+        
+        gcloud app deploy app.yml --stop-previous-version --version=VERSION
+        gcloud app browse
+        
+        
+        gcloud app versions stop v1 v2
+        gcloud app services set-traffic serv1 --splits v1=.4,v2=.6
+        # IF no service name then applied to all services
+        --migrate indicates that App Engine should migrate traffic from the previous version to the new version.
+        --split-by specifies how to split traffic using either IP or cookies. Possible values are ip, cookie, and random.
+
 
 List the regions:
 
@@ -201,6 +215,7 @@ Storage
     gsutil cp -v setup.html gs://$BUCKET_NAME_1
     gsutil ls -a gs://$BUCKET_NAME_1/setup.html
     gsutil rsync -r ./firstlevel gs://$BUCKET_NAME_1/firstlevel
+    gsutil ls
     
 Screen Utilities
 
