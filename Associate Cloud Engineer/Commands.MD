@@ -216,6 +216,30 @@ Storage
     gsutil ls -a gs://$BUCKET_NAME_1/setup.html
     gsutil rsync -r ./firstlevel gs://$BUCKET_NAME_1/firstlevel
     gsutil ls
+    gsutil rewrite -s [STORAGE_CLASS] gs://[PATH_TO_OBJECT]
+    gsutil mv
+    
+Databases
+
+    gcloud sql connect ace-exam-mysql 
+    
+    gcloud sql backups create --instance ace-exam-mysql ––async
+    gcloud sql instances patch [INSTANCE_NAME] –backup-start-time [HH:MM]
+    
+    gcloud datastore export –namespaces='(default)' gs://ace_exam_backups
+    gcloud datastore import gs://ace_exam_backups/[FILE].overall_export_metadata
+    
+    
+    bq ––location=[LOCATION] query ––use_legacy_sql=false ––dry_run [SQL_QUERY]
+    
+    bq --location=US show -j gcpace-project:US.bquijob_119adae7_167c373d5c3
+    
+    
+    cbt # cloud big table
+    
+    gcloud dataproc clusters create cluster-bc3d ––zone us-west2-a
+    gcloud dataproc jobs submit spark ––cluster cluster-bc3d ––jar ace_exam_jar.jar
+    
     
 Screen Utilities
 
