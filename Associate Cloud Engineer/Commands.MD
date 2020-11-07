@@ -196,6 +196,9 @@ Projects :
     gcloud projects get-ancestors my-project
 
 
+    #Create Custom Roles
+    gcloud iam roles create role-id --project=project-id --file=yaml-file-path
+
 Storage
 
     gsutil lifecycle get gs://$BUCKET_NAME_1
