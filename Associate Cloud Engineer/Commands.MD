@@ -273,3 +273,6 @@ Kubernetes Rolling Updates
   
         is an optional field that specifies the maximum number of Pods that can be created over the desired number of Pods
          The default value is 25%.
+         
+         
+      kubectl autoscle rc 
