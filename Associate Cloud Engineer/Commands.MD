@@ -51,6 +51,8 @@ Virtual Networks
         gcloud compute firewall-rules list --sort-by=NETWORK
         gcloud compute firewall-rules list --sort-by=NETWORK --format=json
         
+        #Reserve IP Address
+        gcloud compute addresses create vpn-1-static-ip --project=qwiklabs-gcp-02-f354f5b3039a --region=us-central1
 
 
 Virtual Machine :
@@ -218,6 +220,7 @@ Storage
     gsutil ls
     gsutil rewrite -s [STORAGE_CLASS] gs://[PATH_TO_OBJECT]
     gsutil mv
+    gsutil stat # get the stats like changes done 
     
 Databases
 
@@ -276,3 +279,18 @@ Kubernetes Rolling Updates
          
          
       kubectl autoscle rc 
+
+
+Tunneling and VPN
+
+    gcloud compute --project "qwiklabs-gcp-02-f354f5b3039a" target-vpn-gateways create "vpn-1" --region "us-central1" --network "vpn-network-1"
+    
+    gcloud compute --project "qwiklabs-gcp-02-f354f5b3039a" forwarding-rules create "vpn-1-rule-esp" --region "us-central1" --address "35.188.135.59" --ip-protocol "ESP" --target-vpn-gateway "vpn-1"
+    
+    gcloud compute --project "qwiklabs-gcp-02-f354f5b3039a" forwarding-rules create "vpn-1-rule-udp500" --region "us-central1" --address "35.188.135.59" --ip-protocol "UDP" --ports "500" --target-vpn-gateway "vpn-1"
+    
+    gcloud compute --project "qwiklabs-gcp-02-f354f5b3039a" forwarding-rules create "vpn-1-rule-udp4500" --region "us-central1" --address "35.188.135.59" --ip-protocol "UDP" --ports "4500" --target-vpn-gateway "vpn-1"
+    
+    gcloud compute --project "qwiklabs-gcp-02-f354f5b3039a" vpn-tunnels create "tunnel1to2" --region "us-central1" --peer-address "35.189.237.31" --shared-secret "gcprocks" --ike-version "2" --local-traffic-selector "0.0.0.0/0" --target-vpn-gateway "vpn-1"
+    
+    gcloud compute --project "qwiklabs-gcp-02-f354f5b3039a" routes create "tunnel1to2-route-1" --network "vpn-network-1" --next-hop-vpn-tunnel "tunnel1to2" --next-hop-vpn-tunnel-region "us-central1" --destination-range "10.1.3.0/24"
