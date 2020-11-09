@@ -5,7 +5,7 @@ Configurations
     gcloud config configurations activate [NAME] 
     gcloud config unset compute/zone
     gcloud config set project id
-    glcoud config set compute/zone
+    glcoud config set compute/zone    # This applies to current project configuration and not all... 
     gcloud config get-value compute/zone
 
 Services on Projects
@@ -63,6 +63,7 @@ Virtual Machine :
         gcloud compute instances create privatenet-us-vm --zone=us-central1-c --machine-type=f1-micro --subnet=privatesubnet-us --image-family=debian-10 --image-project=debian-cloud --boot-disk-size=10GB --boot-disk-type=pd-standard --boot-disk-device-name=privatenet-us-vm
         gcloud compute instances list --sort-by=ZONE
         gcloud compute ssh vm-internal --zone us-central1-c --tunnel-through-iap
+        gcloud projects add-iam-policy-binding PROJECT_ID --member=user:EMAIL --role=roles/iap.tunnelResourceAccessor
         
         gcloud compute reset-windows-password instance-name
         gcloud compute project-info describe #Describe the Compute Engine project resource.
@@ -79,7 +80,11 @@ Virtual Machine :
         
         #different regions - then follow snapshot approach
         gcloud compute instances start instance1, instance 2 --async
-   
+        
+        gcloud compute project-info add-metadata --metadata google-compute-default-region=europe-west1,google-compute-default-zone=europe-west1-b
+        gcloud compute project-info describe --project project-id
+        
+        
 Disks / Snapshots /Images :
 
         gcloud compute disks snapshot DISK_NAME --snapshot-names=NAME
@@ -224,6 +229,8 @@ Storage
     gsutil rewrite -s [STORAGE_CLASS] gs://[PATH_TO_OBJECT]
     gsutil mv
     gsutil stat # get the stats like changes done 
+    
+    gsutil mv gs://ace-exam-bucket1/README.txt gs://ace-exam-bucket2/
     
 Databases
 
