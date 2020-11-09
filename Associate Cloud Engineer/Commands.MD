@@ -5,7 +5,10 @@ Configurations
     gcloud config configurations activate [NAME] 
     gcloud config unset compute/zone
     gcloud config set project id
-    glcoud config set compute/zone    # This applies to current project configuration and not all... 
+    glcoud config set compute/zone    
+    # This applies to current project configuration and not all... and below applies on all project level
+    gcloud compute project-info add-metadata --metadata google-compute-default-region=europe-west1,google-compute-default-zone=europe-west1-b
+            
     gcloud config get-value compute/zone
 
 Services on Projects
