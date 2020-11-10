@@ -31,7 +31,8 @@ Create Storage bucket :
     gsutil mb -b on gs://maheshbiradar03 --uniform Access on on Bucket Level
     gsutil cp myfile gs://maheshbiradar03
     gsutil mb -c standard -l us-east1 --retention 1y gs://some-bucket ## if no location the default is US
-
+    gsutil signurl -m PUT -d 4h <JSON Key File> gs://<bucket>/po.pdf ## Default method is GET
+    
 Projects -> Billing account
 
     gcloud beta billing projects link my-project --billing-account=0X0X0X-0X0X0X-0X0X0X
