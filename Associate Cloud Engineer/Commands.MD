@@ -62,6 +62,7 @@ Virtual Networks
 Virtual Machine :
         
         gcloud compute instances list
+        gcloud compute instances list --filter="zone:(us-central1-a us-central1-b)"
         gcloud compute instances create --machine-type=n1-standard-1 my-first-paid-machine
         gcloud compute instances delete my-first-paid-machine
         gcloud compute instances create privatenet-us-vm --zone=us-central1-c --machine-type=f1-micro --subnet=privatesubnet-us --image-family=debian-10 --image-project=debian-cloud --boot-disk-size=10GB --boot-disk-type=pd-standard --boot-disk-device-name=privatenet-us-vm
