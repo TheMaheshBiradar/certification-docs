@@ -42,6 +42,7 @@ Virtual Networks
        gcloud compute networks create privatenet --subnet-mode=custom
        gcloud compute networks subnets create privatesubnet-eu --network=privatenet --region=europe-west1 --range=172.20.0.0/20
        gcloud compute networks subnets create privatesubnet-us --network=privatenet --region=us-central1 --range=172.16.0.0/24
+       gcloud compute networks subnets create ace-exam-vpc-subnet1 --network=aceexam-vpc1 --region=us-west2 --range=10.10.0.0/16 --enable-private-ip-googleaccess --enable-flow-logs
        gcloud compute networks list
        gcloud compute networks subnets list --sort-by=NETWORK
        gcloud compute networks subnets list --sort-by=NETWORK
@@ -79,6 +80,7 @@ Virtual Machine :
         gcloud compute instances delete ch06-instance-1 --zone us-central2-b --keepdisks=all
         gcloud compute instances delete ch06-instance-1 --zone us-central2-b --deletedisks=data
         gcloud compute instances describe INSTANCE_NAME
+        gcloud compute instances create [INSTANCE_NAME] --preemptible --no-boot-disk-auto-delete.
         
         #movement within region
         gcloud compute instances move
@@ -258,6 +260,17 @@ Databases
     gcloud dataproc clusters create cluster-bc3d ––zone us-west2-a
     gcloud dataproc jobs submit spark ––cluster cluster-bc3d ––jar ace_exam_jar.jar
     
+    
+    bq extract --destination_format CSV --compression GZIP 'mydataset.mytable' gs://example-bucket/myfile.zip
+    bq load --autodetect --source_format=CSV mydataset.mytable gs://ace-exam-biquery/
+    mydata.csv
+    
+    
+    gcloud pubsub topics create ace-exam-topic1
+    gcloud pubsub subscriptions create --topic=ace-exam-topic1 ace-exam-sub1
+    
+    gcloud pubsub topics publish ace-exam-topic1 ––message "first ace exam message"
+    gcloud pubsub subscriptions pull ––auto-ack ace-exam-sub1
     
 Screen Utilities
 
