@@ -48,7 +48,15 @@ Virtual Networks
        gcloud compute networks subnets list --sort-by=NETWORK
        gcloud compute networks subnets describe NAME --region=europe-west1  # describe specific network
        
-  Firewall
+VPC/VPN
+
+        gcloud compute networks create ace-exam-vpc1 --subnet-mode=auto
+        gcloud compute networks create ace-exam-vpc1 --subnet-mode=custom
+        
+        gcloud compute networks subnets create ace-exam-vpc-subnet1 --network=aceexam-vpc1 --region=us-west2 --range=10.10.0.0/16 --enable-private-ip-googleaccess --enable-flow-logs
+        
+
+Firewall
   
         gcloud compute --project=qwiklabs-gcp-01-248f1e39fabc firewall-rules create managementnet-allow-icmp-ssh-rdp --direction=INGRESS --priority=1000 --network=managementnet --action=ALLOW --rules=tcp:22,tcp:3389,icmp --source-ranges=0.0.0.0/0
         gcloud compute firewall-rules create privatenet-allow-icmp-ssh-rdp --direction=INGRESS --network=privatenet --priority=1000 --action=ALLOW --rules=icmp,tcp:22,tcp:3389 --source-ranges=0.0.0.0/0
