@@ -19,3 +19,19 @@ departments:
    - retail:
         na: 70000
         apac: 10
+
+Employee:
+  Name: Aman
+  Sex: Malhotra
+  Age: 30
+  Title: Project Manager
+  Projects:
+    - Development
+    - Support
+  Payslips:
+    - Month: January
+      Wage: 40000
+    - Month: February
+      Wage: 45000
+    - Month: August
+      Wage: 40000
