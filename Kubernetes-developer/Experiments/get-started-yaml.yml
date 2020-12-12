@@ -1,0 +1,21 @@
+employees:
+  - mahesh:
+      name: Mahesh
+      id: 987654
+  - rajesh:
+      name: Rajesh
+      id: 123456
+
+books:
+  - clean code
+  - clean architecture
+  - release it
+  - eip
+
+departments:
+   - bfsi:
+        na: 99999
+        apac: 1
+   - retail:
+        na: 70000
+        apac: 10
