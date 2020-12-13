@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: yml-pod-nginx
+  labels:
+      app: proxy
+      type: front-end
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
