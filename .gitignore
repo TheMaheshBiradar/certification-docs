@@ -8,3 +8,9 @@
 /httpRequests/
 /*.iml
 .idea
+/Confluent Kafka/Experiments/01-beginner-course/*.iml
+/Confluent Kafka/Experiments/01-beginner-course/target/classes/com/taggy/kafka/client
+/Confluent Kafka/Experiments/01-beginner-course/target/maven-status/maven-compiler-plugin/compile/default-cli/*.lst
+/Confluent Kafka/Experiments/02-twitter-kafka/target/classes/com/taggy/twitter/client/*.class
+/Confluent Kafka/Experiments/02-twitter-kafka/target/classes/com/taggy/twitter/client/producer/*.class
+/Confluent Kafka/Experiments/02-twitter-kafka/kafka-producer/target/classes/com/taggy/twitter/client/producer/*.class
