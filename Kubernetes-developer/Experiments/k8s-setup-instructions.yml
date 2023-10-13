@@ -1,0 +1,4 @@
+softwares:
+  - mac:
+    - docker https://docs.docker.com/desktop/install/mac-install/
+    - minikube https://minikube.sigs.k8s.io/docs/start/
